@@ -1,14 +1,14 @@
 //
 //  ViewController.h
-//  Assignment3
+//  Assignment2
 //
-//  Created by Colt King on 2018-04-12.
+//  Created by Colt King on 2018-02-28.
 //  Copyright © 2018 2Toucans. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : GLKViewController
 
 
 @end

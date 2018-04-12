@@ -1,24 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V7m-aQ-9JQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--GLKit View Controller-->
+        <scene sceneID="W5h-D7-CzI">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <glkViewController preferredFramesPerSecond="30" id="V7m-aQ-9JQ" customClass="ViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="9ZT-KB-0n4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kA3-YJ-dOG" userLabel="FogSwitch">
+                                <rect key="frame" x="112" y="569" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="fogToggled:" destination="V7m-aQ-9JQ" eventType="valueChanged" id="fBg-Lk-jII"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mL-pg-bdh" userLabel="SpotlightSwitch">
+                                <rect key="frame" x="312" y="569" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="spotlightToggled:" destination="V7m-aQ-9JQ" eventType="valueChanged" id="ABG-rt-VOj"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZb-SD-TuH" userLabel="FogStyleSwitch">
+                                <rect key="frame" x="214" y="569" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="fogStyleToggled:" destination="V7m-aQ-9JQ" eventType="valueChanged" id="koD-F9-Bem"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day/Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-7z-PdI">
+                                <rect key="frame" x="1" y="527" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-VL-aXu">
+                                <rect key="frame" x="121" y="526" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fog Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-Ql-ihj">
+                                <rect key="frame" x="201" y="527" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orl-aZ-9Qh">
+                                <rect key="frame" x="301" y="525" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDq-up-qup" userLabel="DayNightSwitch">
+                                <rect key="frame" x="16" y="569" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="dayToggled:" destination="V7m-aQ-9JQ" eventType="valueChanged" id="l22-Er-M6I"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NhY-HQ-ulL" userLabel="ControlSwitch">
+                                <rect key="frame" x="16" y="616" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="controlToggled:" destination="V7m-aQ-9JQ" eventType="valueChanged" id="Hz1-qM-qoa"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Control Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yym-Rw-d0l" userLabel="Control">
+                                <rect key="frame" x="71" y="621" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="zcQ-Y2-2tJ"/>
+                        <connections>
+                            <outlet property="delegate" destination="V7m-aQ-9JQ" id="bS2-ju-EOJ"/>
+                            <outletCollection property="gestureRecognizers" destination="0RE-20-tpV" appends="YES" id="pmb-pm-deo"/>
+                            <outletCollection property="gestureRecognizers" destination="y0b-h8-2aE" appends="YES" id="k0v-34-Q8o"/>
+                            <outletCollection property="gestureRecognizers" destination="wtM-7w-GqF" appends="YES" id="chi-Vq-hbT"/>
+                            <outletCollection property="gestureRecognizers" destination="Wg4-gt-a5g" appends="YES" id="pM7-1h-pYZ"/>
+                            <outletCollection property="gestureRecognizers" destination="xMm-Mc-UBG" appends="YES" id="8KB-5z-0hl"/>
+                        </connections>
+                    </glkView>
+                    <connections>
+                        <outlet property="FogSwitch" destination="kA3-YJ-dOG" id="SKc-04-fBS"/>
+                        <outlet property="controlSwitch" destination="NhY-HQ-ulL" id="gNR-vC-QRn"/>
+                        <outlet property="dayNightSwitch" destination="hDq-up-qup" id="eS4-lV-tTi"/>
+                        <outlet property="fogStyleSwitch" destination="oZb-SD-TuH" id="dEs-4H-YRF"/>
+                        <outlet property="spotlightSwitch" destination="6mL-pg-bdh" id="hkN-E9-IFi"/>
+                    </connections>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnK-i6-WYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="0RE-20-tpV">
+                    <connections>
+                        <action selector="panGesture:" destination="V7m-aQ-9JQ" id="hMa-r2-HBt"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="y0b-h8-2aE" userLabel="TwoTap Gesture Recognizer">
+                    <connections>
+                        <action selector="doubleTap:" destination="V7m-aQ-9JQ" id="xO5-W7-jBT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="2" id="wtM-7w-GqF" userLabel="DoublePan Gesture Recognizer">
+                    <connections>
+                        <action selector="rotateGesture:" destination="V7m-aQ-9JQ" id="LkL-1j-RY9"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Wg4-gt-a5g">
+                    <connections>
+                        <action selector="tap:" destination="V7m-aQ-9JQ" id="2tf-2q-r0G"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="xMm-Mc-UBG">
+                    <connections>
+                        <action selector="pinch:" destination="V7m-aQ-9JQ" id="Hhw-Fz-a1b"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="97.601199400299862"/>
         </scene>
     </scenes>
 </document>
